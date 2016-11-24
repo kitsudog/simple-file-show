@@ -1,0 +1,11 @@
+# A simple Python Web Service configuration
+web:
+  image: daocloud.io/kitsudo/django-server
+  ports:
+   - "5000:5000"
+  links:
+   - redis
+  volumes:
+   - ./:/app/server
+redis:
+  image: daocloud.io/library/redis
